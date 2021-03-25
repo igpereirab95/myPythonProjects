@@ -1,0 +1,2 @@
+# myPythonProjects
+Projects from study
