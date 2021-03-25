@@ -1,0 +1,13 @@
+[Unit]
+Description=Projeto básico de registro de ponto por url
+After=network.target
+
+[Service]
+User=iago
+Group=www-data
+WorkingDirectory=/home/iago/digital-ocean-tutorial/
+Environment="PATH=/home/iago/.local/share/virtualenvs/digital-ocean-tutorial-XPizP5tB/bin/gunicorn"
+ExecStart=/home/iago/.local/share/virtualenvs/digital-ocean-tutorial-XPizP5tB/bin/gunicorn --workers 3 --bind unix:wsgi.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
